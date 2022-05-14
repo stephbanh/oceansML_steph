@@ -3,13 +3,84 @@
 <head>
     <meta charset="utf-8">
     <title>Oceans ML</title>
+        <!--import bootstrap dependency-->
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous">
+
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 
 <body>
-<h3>Oceans ML</h3>
-<p>This will be our hosted page!</p>
+    <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Oceans ML</h1>
+          <p>Navigate the maps below to explore the dataset</p>
+        </div>
+      </div>
+      
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Our Oceans</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Background
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/key">Key</a></li>
+                  <li><a class="dropdown-item" href="/process">The Process</a></li>
+                  <li><a class="dropdown-item" href="/sources">Data Sources</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Analysis
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/direct">Fishing and Fish Population</a></li>
+                  <li><a class="dropdown-item" href="/indirect">Indirect Effects of Human Activity</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/data">Data</a>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width: 100%;">
+              <li class="nav-item" style="width: 100%;">
+                <p class="group">© 2022 <a href="https://github.com/ennegineer/oceans" target="_blank">Steph, Enne, Tomas, Elliott</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div class="row">
+        <div class = "col-md-2">
+          <p style = "text-align: center;"></p>
+        </div>
+        <div class = "col-md-8">
+          <p class="quotes">“The number of overfished stocks globally has tripled in half a century and today fully one-third of the world's assessed fisheries are currently pushed beyond their biological limits” <em><a href="https://www.worldwildlife.org/threats/overfishing" target="_blank">World Wildlife Fund</a></em><br/><br/>
+            “U.S. fisheries unintentionally catch almost 2,000 federally protected marine mammals, almost 12,000 sea turtles and more than 7,600 seabirds. Worldwide more than 650,000 marine mammals die as fishery “bycatch” annually.”--<em><a href="https://www.biologicaldiversity.org/campaigns/fisheries/" target="_blank">Center for Biological Diversity</a></em><br/><br/>
+            “1225 species affected. 34 percent of the species monitored ingest litter, 31 per cent colonize it, and 30 per cent get entangled or otherwise trapped in it”--<em><a href="https://www.awi.de/en/about-us/service/press/single-view/litter-is-present-throughout-the-worlds-oceans-1220-species-affected.html" target="_blank">Alfred-Wegener Institute</a></em><br/><br/>
+            “Human activities have resulted in the near doubling of nitrogen and tripling of phosphorus flows to the environment [which has lead to] loss of subaquatic vegetation, change in species composition, coral reef damage, low dissolved oxygen, and the formation of dead zones (oxygen-depleted waters) that can lead to ecosystem collapse” --<em><a href="https://www.wri.org/initiatives/eutrophication-and-hypoxia/learn" target="_blank">World Resources Institute</a></em><br/><br/>
+          </p>
+        </div>
+        <div class = "col-md-2">
+          <p style = "text-align: center;"></p>
+        </div>
+      </div>
 </body>
 
 </html>
