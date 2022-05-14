@@ -1,9 +1,9 @@
 # python==3.8.3
-Flask==0.8
-Jinja2==2.6
-Werkzeug==0.8.3
-certifi==0.0.8
-chardet==1.0.1
+# Flask==0.8
+# Jinja2==2.6
+# Werkzeug==0.8.3
+# certifi==0.0.8
+# chardet==1.0.1
 distribute==0.6.24
 gunicorn==0.14.2
 requests==0.11.1
@@ -47,9 +47,9 @@ brotlipy==0.7.0
 # CacheControl @ file:///tmp/build/80754af9/cachecontrol_1594058963164/work
 cachetools==5.0.0
 census==0.8.18
-# certifi==2020.6.20
+certifi==2020.6.20
 cffi==1.14.0
-# chardet==3.0.4
+chardet==3.0.4
 citipy==0.0.5
 click==7.1.2
 # cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1594141588948/work
@@ -81,7 +81,7 @@ et-xmlfile==1.0.1
 fastcache==1.1.0
 filelock==3.0.12
 flake8==3.8.3
-# Flask==1.1.2
+Flask==1.1.2
 Flask-PyMongo==2.3.0
 flatbuffers==2.0
 fsspec==0.7.4
@@ -121,7 +121,7 @@ isort==4.3.21
 itsdangerous==1.1.0
 jdcal==1.4.1
 # jedi @ file:///C:/ci/jedi_1592833825077/work
-# Jinja2==2.11.2
+Jinja2==2.11.2
 jmespath==0.10.0
 # joblib @ file:///tmp/build/80754af9/joblib_1594236160679/work
 json5==0.9.5
@@ -323,7 +323,7 @@ wbgapi==1.0.7
 # wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 webdriver-manager==3.5.3
 webencodings==0.5.1
-# Werkzeug==1.0.1
+Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 win-inet-pton==1.1.0
 win-unicode-console==0.5
