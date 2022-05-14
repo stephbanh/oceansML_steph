@@ -29,5 +29,11 @@ def home():
 
     return render_template('index.html')
 
+# 'sources' route
+@app.route("/sources")
+def sources():
+    print("Loading Sources...")
+    return render_template('sources.html')
+
 if __name__ == "__main__":
     app.run()
