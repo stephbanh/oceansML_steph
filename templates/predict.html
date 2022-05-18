@@ -63,8 +63,8 @@
                   Prediction
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/predict">Fishing and Fish Population</a></li>
-                  <li><a class="dropdown-item" href="/predict">Indirect Effects of Human Activity</a></li>
+                  <li><a class="dropdown-item" href="/direct">Fishing and Fish Population</a></li>
+                  <li><a class="dropdown-item" href="/indirect">Indirect Effects of Human Activity</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -82,22 +82,38 @@
         </div>
       </nav>
       
-      
+
       <div class="row">
-        <div class = "col-md-2">
-          <p style = "text-align: center;"></p>
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Country:</h5>
+            <select
+              id="selDataset"
+              onchange="optionChanged(this.value)"
+            ></select>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Demographic Info</h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
         </div>
-        <div class = "col-md-8">
-          <p class="quotes">“The number of overfished stocks globally has tripled in half a century and today fully one-third of the world's assessed fisheries are currently pushed beyond their biological limits” <em><a href="https://www.worldwildlife.org/threats/overfishing" target="_blank">World Wildlife Fund</a></em><br/><br/>
-            “U.S. fisheries unintentionally catch almost 2,000 federally protected marine mammals, almost 12,000 sea turtles and more than 7,600 seabirds. Worldwide more than 650,000 marine mammals die as fishery “bycatch” annually.”--<em><a href="https://www.biologicaldiversity.org/campaigns/fisheries/" target="_blank">Center for Biological Diversity</a></em><br/><br/>
-            “1225 species affected. 34 percent of the species monitored ingest litter, 31 per cent colonize it, and 30 per cent get entangled or otherwise trapped in it”--<em><a href="https://www.awi.de/en/about-us/service/press/single-view/litter-is-present-throughout-the-worlds-oceans-1220-species-affected.html" target="_blank">Alfred-Wegener Institute</a></em><br/><br/>
-            “Human activities have resulted in the near doubling of nitrogen and tripling of phosphorus flows to the environment [which has lead to] loss of subaquatic vegetation, change in species composition, coral reef damage, low dissolved oxygen, and the formation of dead zones (oxygen-depleted waters) that can lead to ecosystem collapse” --<em><a href="https://www.wri.org/initiatives/eutrophication-and-hypoxia/learn" target="_blank">World Resources Institute</a></em><br/><br/>
-          </p>
+        <div class="col-md-5">
+          <div id="bar"></div>
         </div>
-        <div class = "col-md-2">
-          <p style = "text-align: center;"></p>
+        <div class="col-md-5">
+          <div id="gauge"></div>
         </div>
       </div>
-</body>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bubble"></div>
+        </div>
+      </div>
 
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="static/js/predict.js"></script>
+</body>
 </html>

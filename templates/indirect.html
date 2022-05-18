@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Oceans ML</title>
+        <!--import bootstrap dependency-->
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous">
+
+    <!--import popper js-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <!--import bootswatch theme. see api: https://bootswatch.com/api/5.json-->
+        <!-- =<link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.css" > -->
+
+
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Oceans ML</h1>
+          <p>Machine Learning on Ocean Data</p>
+        </div>
+      </div>
+      
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Oceans ML</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Background
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/key">Key</a></li>
+                  <li><a class="dropdown-item" href="/process">The Process</a></li>
+                  <li><a class="dropdown-item" href="/sources">Data Sources</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Analysis
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/direct">Fishing and Fish Population</a></li>
+                  <li><a class="dropdown-item active" href="#">Indirect Effects of Human Activity</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Prediction
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/predict">Fishing and Fish Population</a></li>
+                  <li><a class="dropdown-item" href="/predict">Indirect Effects of Human Activity</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/data">Data</a>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width: 100%;">
+              <li class="nav-item" style="width: 100%;">
+                <p class="group">© 2022 <a href="https://github.com/ennegineer/oceans" target="_blank">Steph, Enne, Tomas, Elliott</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div class="row">
+        <div class = "col-md-3">
+          <p style = "text-align: center;">Toggle the settings on the map below to explore our oceans. See the ocean currents, temperature, and eutrophication. Do you see any patterns? </p>
+        </div>
+        <div class = "col-md-6 justify-content-center">
+          <p style = "text-align: center;"></p>
+        </div>
+        <div class = "col-md-2">
+          <p style = "text-align: center;"></p>
+        </div>
+      </div>
+      <div class="row" id="map-holder">
+        <!-- The div where we'll insert our map -->
+        <div id="map" class="col-md-6"></div>
+        <div class="col-md-5" id="data">
+          <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            </div>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2015_2016.png" class="d-block w-100" alt="...">
+                <h5>2015-16</h5>
+              </div>
+              <div class="carousel-item text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2016_2017.png" class="d-block w-100" alt="...">
+                <h5>2016-17</h5>
+              </div>
+              <div class="carousel-item text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2017_2018.png" class="d-block w-100" alt="...">
+                <h5>2017-18</h5>
+              </div>
+              <div class="carousel-item text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2018_2019.png" class="d-block w-100" alt="...">
+                <h5>2018-19</h5>
+              </div>
+              <div class="carousel-item text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2019_2020.png" class="d-block w-100" alt="...">
+                <h5>2019-20</h5>
+              </div>
+              <div class="carousel-item text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2020_2021.png" class="d-block w-100" alt="...">
+                <h5>2020-21</h5>
+              </div>
+              <div class="carousel-item text-center p-4">
+                <img src="static/img/Time_Series_Mat_Quan_2021_2022.png" class="d-block w-100" alt="...">
+                
+                <h5>2021-22</h5>
+               
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div id="explanation">
+            <br>
+            <h3>Measuring Plastic and Fishnets</h3>
+            <p>In these datasets, plastic is overwhelmingly represented in part to how they were counted. Each piece of plastic counts as one whole piece regardless of weight.
+              This system would count an enormous fishnet as one even though it is much larger.</p>
+            <hr>
+            <p>
+              However, this system and consequential skew is needed to account for the impact and pervasiveness of plastic and microplastics. These items are no less harmful in one piece or a hundred pieces. They do not decompose,
+              only broken down into smaller pieces that accumulate inside of animals. This will kill them, either by poisoning them or causing organ failure as they cannot digest it.
+              They also leach harmful chemicals into the water and sand, impacting the ocean's chemical balance and contributing to effects like eutrophication on a scale that cannot be underestimated.
+            </p>
+            <hr>
+            <p>
+              It is worth noting however, that fishing debris like nets and hooks are are underrepresented in beach cleanups as they often either sink to the bottom of the ocean where as much as 70% of all marine debris is estimated to end up or are pushed by currents. 
+              They are extremely harmful as they can entangle and harm multiple animals at once and any animal that is free can become re-entangled. The North Pacific Subtropical Gyre is notorious for having trash islands of accumulated fishing parnaphalia that is very 
+              difficult for scientists to trawl for data due to its density. Around these islands also swirls clouds of microplastics and other pieces, torn off their original parts by the waves. This has heavily disrupted fishing and wildlife in the area.
+            </p>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
