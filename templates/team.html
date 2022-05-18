@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 
-<body>
+<>
 <div class="row">
   <div class="col-md-12 jumbotron text-center">
     <h1>Oceans ML</h1>
@@ -49,7 +49,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/key">Key</a></li>
             <li><a class="dropdown-item" href="/process">The Process</a></li>
-            <li><a class="dropdown-item active" href="#">Data Sources</a></li>
+            <li><a class="dropdown-item" href="/sources">Data Sources</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -78,37 +78,64 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width: 100%;">
         <li class="nav-item" style="width: 100%;">
-          <p class="group">© 2022 <a href="/team">Steph, Enne, Tomas, Elliott</a></p>
+          <p class="group">© 2022 <a href="#" target="_blank">Steph, Enne, Tomas, Elliott</a></p>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-<div class="row" id="map-holder">
-  <!-- The div where we'll insert our map -->
-  <div class="col-md-6 defs">
-      <h3>Data</h3>
-      <h5>The datasets in this project are from the following sources:</h5><br/>
+<div class="row">
+  <div class="col-md-2 defs"></div>
+  <div class="col-md-4 defs">
+      <h3>Meet our Team!</h3><br/>
+      <h5>Enne</h5>
+      <img src="{{teams['ennegineer'].avatar_url}}" height="250px">
       <p>
-      <b><a href="https://globalfishingwatch.org/" target="_blank">https://globalfishingwatch.org/</a></b>&nbsp;&nbsp;&nbsp; This source provided the data we used on fishing vessels. GFW combines publicly available tracking data with data acquired through ship monitorying systems operated by governments and made available through partnerships they've secured. <br />
-      <b><a href="https://www.fao.org/about/en/" target="_blank">https://www.fao.org/about/en/</a></b>&nbsp;&nbsp;&nbsp; The Food and Agriculture Organization is a specialized agency of the UN, leading international efforts to achieve food security.<br />
-      <b><a href="https://www.wri.org/" target="_blank">https://www.wri.org/</a></b>&nbsp;&nbsp;&nbsp; World Resources Institute is a global research organization focused around global challenges such as food, water, energy, climate and ocean.<br />
-      <b><a href="https://www.naturalearthdata.com/" target="_blank">https://www.naturalearthdata.com/</a></b>&nbsp;&nbsp;&nbsp; World currents and river data found here.<br />
-      <b><a href="https://debristracker.org/data/" target="_blank">https://debristracker.org/data/</a></b>&nbsp;&nbsp;&nbsp; Dataset on marine debris was sourced from this website.<br />
+      <a href="{{teams['ennegineer'].html_url}}" target="_blank">{{teams['ennegineer'].login}}</a><br/>
+      Location: {{teams['ennegineer'].location}}<br/>
+      Bio: {{teams['ennegineer'].bio}}<br/>
+      Public repos: {{teams['ennegineer'].public_repos}}<br/>
     </p>
-    
+    <br/>
+    </div>
+    <div class="col-md-4 defs">
+        <h3> &nbsp;</h3><br/>
+        <h5>Steph</h5>
+        <img src="{{teams['stephbanh'].avatar_url}}" height="250px">
+        <p>
+        <a href="{{teams['stephbanh'].html_url}}" target="_blank">{{teams['stephbanh'].login}}</a><br/>
+        Location: {{teams['stephbanh'].location}}<br/>
+        Bio: {{teams['stephbanh'].bio}}<br/>
+        Public repos: {{teams['stephbanh'].public_repos}}<br/>
+      </p>
+      <br/>
+    </div>
+    <div class="col-md-3 defs"></div>
+</div>
+<div class="row">
+    <div class="col-md-2 defs"></div>
+    <div class="col-md-4 defs">
+        <h5>Tomas</h5>
+        <img src="{{teams['tobisan4'].avatar_url}}" height="250px">
+        <p>
+        <a href="{{teams['tobisan4'].html_url}}" target="_blank">{{teams['tobisan4'].login}}</a><br/>
+        Location: {{teams['tobisan4'].location}}<br/>
+        Bio: {{teams['tobisan4'].bio}}<br/>
+        Public repos: {{teams['tobisan4'].public_repos}}<br/>
+      </p>
+      <br/>
+      </div>
+    <div class="col-md-4 defs">
+    <h5>Elliott</h5>
+    <img src="{{teams['elliott-dev'].avatar_url}}" height="250px">
+    <p>
+    <a href="{{teams['elliott-dev'].html_url}}" target="_blank">{{teams['elliott-dev'].login}}</a><br/>
+    Location: {{teams['elliott-dev'].location}}<br/>
+    Bio: {{teams['elliott-dev'].bio}}<br/>
+    Public repos: {{teams['elliott-dev'].public_repos}}<br/>
+  </p>
   </div>
-  <div class="col-md-5 defs">
-      <h3>Other Information</h3>
-      <h5>Websites with relevant information:</h5><br/>
-      <p>
-        <b><a href="https://www.naturalworldfacts.com/" target="_blank">https://www.naturalworldfacts.com/</a></b>&nbsp;&nbsp;&nbsp; A community developed by/for people passionate about nature. <br />
-        <b><a href="https://openweathermap.org/" target="_blank">https://openweathermap.org/</a></b>&nbsp;&nbsp;&nbsp; Our base maps were found here. <br />
-        <b><a href="https://turfjs.org/" target="_blank">https://turfjs.org/</a></b>&nbsp;&nbsp;&nbsp; We used this javascript library for advanced geospatial analysis for browsers. <br />
-        </p>
-  </div>
+  <div class="col-md-3 defs"></div>
 </div>
 </body>
 

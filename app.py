@@ -1,6 +1,7 @@
 # import dependencies
 from flask import Flask, jsonify, render_template, redirect
 from flask_pymongo import PyMongo
+import requests
 
 #################################################
 # Flask Setup
@@ -70,6 +71,21 @@ def data():
 def process():
     print("Loading Process...")
     return render_template('process.html')
+
+# 'team' route
+@app.route("/team")
+def team():
+    # teamnames = ['ennegineer', 'stephbanh', 'elliott-dev', 'tobisan4']
+    url = "https://api.github.com/users/"
+    teams = {'ennegineer':{}, 'stephbanh':{}, 'elliott-dev':{}, 'tobisan4':{}}
+    for mem in teams:
+        queryurl = url + mem
+    # Get response into JSON
+        response = requests.get(queryurl)
+        teamjson = response.json()
+        teams[mem] = teamjson
+
+    return render_template('team.html', teams = teams)
 
 if __name__ == "__main__":
     app.run()
