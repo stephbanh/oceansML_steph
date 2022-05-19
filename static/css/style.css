@@ -124,3 +124,11 @@ a {
   justify-content: space-between;
   display: flex;
 }
+
+.titlebar {
+ padding-left:2rem;
+ padding-top: 1rem;
+ padding-bottom: .7rem;
+ font-size:1.4rem;
+ background-color: rgb(97, 209, 253);
+}

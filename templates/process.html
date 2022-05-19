@@ -25,12 +25,11 @@
 </head>
 
 <body>
-<div class="row">
-  <div class="col-md-12 jumbotron text-center">
-    <h1>Oceans ML</h1>
-    <p>Machine Learning on Ocean Data</p>
+  <div class="row titlebar">
+    <div>
+      <span>Oceans ML: <em>Predictive Modeling on Ocean Data</em></span>
+    </div>
   </div>
-</div>
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px">
@@ -97,15 +96,17 @@
       <h3>Sourcing and Transforming Data</h3>
       <p>
       Commercial fishing vessel data was found via <a href="https://globalfishingwatch.org/" target="_blank">Global Fishing Watch</a>, a site with a purpose to create and publicly share data about human activity at sea. We created a Python script using Pandas to remove unnecessary columns of data, duplicated entries and false positives, then create separate .json files for the types of vessels and each one within the types. 
-      <br /><br />Marine debris data was found through Debristracker, a site whose main mission is to track marine debris which helps to collect and build a large dataset that assists researchers to help tackle the plastic-pollution problem.  We gathered data from 2012 to 2022 from all organizations that inputted data into the database , which generated more than 1.3 million data points across 4 different .csv files (2012-2014, 2015-17, 2018-2020, and 2021-2022) that had to be filtered, cleaned, and then merged. We used python code utilizing pandas to remove any unnecessary columns of the data, assign appropriate data types, remove values that were duplicated and of null values, and stripped the space on the data appropriately. We lastly created a .json file showing the cleaned data to be used for the creation of other visuals. <br />
+      <br /><br />Marine debris data was found through <a href="https://debristracker.org/data/" target="_blank">Debristracker</a>, a site whose main mission is to track marine debris which helps to collect and build a large dataset that assists researchers to help tackle the plasticpollution problem.  We gathered data from 2012 to 2022 from all organizations that inputted data into the database, which generated more than 1.3 million data points.
+      <br /><br />
+      Since the marine debris data and fishing data were collected in more concise files than the vessel data, the files were manually merged in pandas and prepared for our needs by removing erroneous columns and dropping rows with incomplete or duplicate data. Lastly we created .json files of the cleaned data to be used for the creation of our visuals. <br />
     </p>
     </div>
     <div class="col-md-5 defs">
       <h3>Visualizations</h3>
       <p>
-          We leveraged the flexibility of several JavaScript plugins to modify markers and cluster data on maps.  With large datasets with many individual points, we used Turf.js, a secondary library for advanced geospatial analysis to algorithmically clean and smooth the data into cleaner lines. Colors schemes were created using ColorBrewer which is a swatch site specialized for maps and modified for personal use.
+          We leveraged the flexibility of several JavaScript plugins (mainly leaflet and plotly) to modify markers and cluster data on maps and charts.  In our larger datasets we wanted to map, we used Turf.js, a library for advanced geospatial analysis to algorithmically smooth the data into cleaner lines.
           <br /><br />
-          We created the material and quantity time series visual utilizing the plotly.express module with the cleaned marine debris data and taking a sum of the data grouped by the material and quantity sorted by the year in ascending order. The material and radius time series visual was made using the same plotly.express module with the cleaned marine debris data and taking a sum of the radius data grouped by material only and then sorted by the year in ascending order.<br/><br/><br />
+          For the fishing data, we also incorporated the use of Tableau and embedded those visualizations into this website.<br/><br/><br />
     </p>
   
         <h3>Predicting the Unknown</h3>
