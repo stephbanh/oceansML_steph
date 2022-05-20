@@ -42,11 +42,23 @@ def direct():
     print("Loading Fish...")
     return render_template('direct.html')
 
-# 'analysis' indirect route
-@app.route("/indirect")
+# 'analysis' debris route
+@app.route("/debris")
 def indirect():
-    print("Loading Trash...")
-    return render_template('indirect.html')
+    print("Loading Debris...")
+    return render_template('debris.html')
+
+# 'analysis' eutrophication route
+@app.route("/eutrop")
+def eutrop():
+    print("Loading Eutrop...")
+    return render_template('eutrophication.html')
+
+# 'prediction process' route
+@app.route("/predproc")
+def predproc():
+    print("Loading Prediction Process...")
+    return render_template('predproc.html')
 
 # 'sources' route
 @app.route("/sources")

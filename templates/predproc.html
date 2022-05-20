@@ -31,7 +31,7 @@
       <!-- navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Oceans ML</a>
+          <a class="navbar-brand" href="#">Oceans ML</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -53,17 +53,18 @@
                   Analysis
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/direct">Fishing and Fish Population</a></li>
-                  <li><a class="dropdown-item" href="/indirect">Indirect Effects of Human Activity</a></li>
-                </ul>
+                    <li><a class="dropdown-item" href="/direct">Fishing by Country</a></li>
+                    <li><a class="dropdown-item" href="/eutrop">Eutrophication</a></li>
+                    <li><a class="dropdown-item" href="/debris">Marine Debris</a></li>
+                  </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Prediction
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item active" href="#">Fishing Predictions by Country</a></li>
-                  <li><a class="dropdown-item" href="/predproc">Prediction Process</a></li>
+                    <li><a class="dropdown-item" href="/predict">Fishing Predictions by Country</a></li>
+                    <li><a class="dropdown-item active" href="#">Prediction Process</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -81,38 +82,21 @@
         </div>
       </nav>
       
+      
+      <div class="row" id="map-holder">
+        <!-- The div where we'll insert our map -->
+        <div class="col-md-6 defs">
+            <h3>Steps</h3>
+            <p>In our exploration phase of predictive modeling, we ruled out linear regression, as the data is heavily skewed. We decided on random forest classifier (for datasets with more than 10 unique values) and regressor (for datasets with unique values below 10).<br/><br/>
+            
+            </p>
+        </div>
+        <div class="col-md-5 defs">
+          <h3>Caveats</h3>
+          <p><br/>
 
-      <div class="row">
-        <div class="col-md-2">
-          <div class="well">
-            <h5>Country:</h5>
-            <select
-              id="selDataset"
-              onchange="optionChanged(this.value)"
-            ></select>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Demographic Info</h3>
-            </div>
-            <div id="sample-metadata" class="panel-body"></div>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div id="bar"></div>
-        </div>
-        <div class="col-md-5">
-          <div id="gauge"></div>
+        </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div id="bubble"></div>
-        </div>
-      </div>
-
-      <script src="https://d3js.org/d3.v5.min.js"></script>
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      <script src="static/js/predict.js"></script>
 </body>
 </html>

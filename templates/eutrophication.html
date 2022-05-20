@@ -15,7 +15,33 @@
     <!--import bootswatch theme. see api: https://bootswatch.com/api/5.json-->
         <!-- =<link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.css" > -->
 
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin="" />
 
+        <!-- Leaflet JavaScript code -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+        <!-- D3 JavaScript -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+          <!-- Leaflet plugin-->
+        <script type="text/javascript" src="static/js/leaflet.extra-markers.min.js"></script>
+        <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
+        <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+        <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+        
+        <script type="text/javascript" src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.11.4/dist/leaflet-geoman.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.11.4/dist/leaflet-geoman.css">
+
+        <script src="static/js/openweathermap.js"></script>
+        <link rel="stylesheet" href="static/css/leaflet-openweathermap.css">
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
@@ -53,7 +79,7 @@
                   Analysis
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/direct">Fishing by Country</a></li>
+                  <li><a class="dropdown-item active" href="#">Fishing by Country</a></li>
                   <li><a class="dropdown-item" href="/eutrop">Eutrophication</a></li>
                   <li><a class="dropdown-item" href="/debris">Marine Debris</a></li>
                 </ul>
@@ -64,7 +90,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="/predict">Fishing and Fish Population</a></li>
-                  <li><a class="dropdown-item" href="/predproc">Prediction Process</a></li>
+                  <li><a class="dropdown-item" href="#">Indirect Effects of Human Activity</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -82,22 +108,35 @@
         </div>
       </nav>
       
-      
       <div class="row">
-        <div class = "col-md-2">
-          <p style = "text-align: center;"></p>
+        <div class = "col-md-6">
+          <p style = "text-align: center;">Toggle the settings on the map below to explore our oceans. See the ocean currents, temperature, and eutrophication. Do you see any patterns? </p>
         </div>
-        <div class = "col-md-8">
-          <p class="quotes">“The number of overfished stocks globally has tripled in half a century and today fully one-third of the world's assessed fisheries are currently pushed beyond their biological limits” <em><a href="https://www.worldwildlife.org/threats/overfishing" target="_blank">World Wildlife Fund</a></em><br/><br/>
-            “U.S. fisheries unintentionally catch almost 2,000 federally protected marine mammals, almost 12,000 sea turtles and more than 7,600 seabirds. Worldwide more than 650,000 marine mammals die as fishery “bycatch” annually.”--<em><a href="https://www.biologicaldiversity.org/campaigns/fisheries/" target="_blank">Center for Biological Diversity</a></em><br/><br/>
-            “1225 species affected. 34 percent of the species monitored ingest litter, 31 per cent colonize it, and 30 per cent get entangled or otherwise trapped in it”--<em><a href="https://www.awi.de/en/about-us/service/press/single-view/litter-is-present-throughout-the-worlds-oceans-1220-species-affected.html" target="_blank">Alfred-Wegener Institute</a></em><br/><br/>
-            “Human activities have resulted in the near doubling of nitrogen and tripling of phosphorus flows to the environment [which has lead to] loss of subaquatic vegetation, change in species composition, coral reef damage, low dissolved oxygen, and the formation of dead zones (oxygen-depleted waters) that can lead to ecosystem collapse” --<em><a href="https://www.wri.org/initiatives/eutrophication-and-hypoxia/learn" target="_blank">World Resources Institute</a></em><br/><br/>
-          </p>
+        <div class = "col-md-3 justify-content-center">
+          <p style = "text-align: center;"></p>
         </div>
         <div class = "col-md-2">
           <p style = "text-align: center;"></p>
         </div>
       </div>
+      <div class="row" id="map-holder">
+        <!-- The div where we'll insert our map -->
+        <div id="map" class="col-md-6"></div>
+        <div class="col-md-5" id="data">
+          <div>
+            <h3>Map Explanations</h3>
+            <p>
+            <b>Eutrophication Map</b>: This is a map showing eutrophication in our oceans. Eutrophication is frequently caused by runoff from the land, and causes death of animal life from lack of oxygen.<br /><br />
+            <b>Eutrophic</b>: A body of water rich in nutrients, supporting dense plant population. This blocks off sunlight and causes other plant life to decompose. The loss of other plants leads to a loss of animals. As these plants and animals decompose, they emit CO<sub>2</sub>, further depriving the area of oxygen, killing marine life in the area and creating “dead zones”. 
+            <br /><br />
+            <b>Hypoxic</b>: Water that is hypoxic is low in oxygen, with dissolved oxygen concentrations of less than 2-3 mg/L. This can occur naturally due to differences in salinity, especially between rivers and oceans. However, it is increasingly caused by an excess of nutrients from humans that can lead to eutrophication. 
+            <br /><br />
+            <b>Improved</b>: This area is improving due to local government efforts to improve runoff infrastructure or improved waterflow.  <br /><br />
+            </p>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="static/js/eutrop.js"></script>
+  
 </body>
-
 </html>

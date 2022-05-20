@@ -12,10 +12,6 @@
     <!--import popper js-->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    <!--import bootswatch theme. see api: https://bootswatch.com/api/5.json-->
-        <!-- =<link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.css" > -->
-
-
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
@@ -53,8 +49,9 @@
                   Analysis
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/direct">Fishing and Fish Population</a></li>
-                  <li><a class="dropdown-item" href="/indirect">Indirect Effects of Human Activity</a></li>
+                  <li><a class="dropdown-item" href="/direct">Fishing by Country</a></li>
+                  <li><a class="dropdown-item" href="/eutrop">Eutrophication</a></li>
+                  <li><a class="dropdown-item" href="/debris">Marine Debris</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -85,17 +82,9 @@
       <div class="row" id="map-holder">
         <!-- The div where we'll insert our map -->
         <div class="col-md-6 defs">
-            <h3>Map Explanations</h3>
-            <p>
-            <b>Eutrophication Map</b>: This is a map showing eutrophication in our oceans. Eutrophication is frequently caused by runoff from the land, and causes death of animal life from lack of oxygen.<br /><br />
-            <b>Eutrophic</b>: A body of water rich in nutrients, supporting dense plant population. This blocks off sunlight and causes other plant life to decompose. The loss of other plants leads to a loss of animals. As these plants and animals decompose, they emit CO<sub>2</sub>, further depriving the area of oxygen, killing marine life in the area and creating “dead zones”. 
-            <br /><br />
-            <b>Hypoxic</b>: Water that is hypoxic is low in oxygen, with dissolved oxygen concentrations of less than 2-3 mg/L. This can occur naturally due to differences in salinity, especially between rivers and oceans. However, it is increasingly caused by an excess of nutrients from humans that can lead to eutrophication. 
-            <br /><br />
-            <b>Improved</b>: This area is improving due to local government efforts to improve runoff infrastructure or improved waterflow.  <br /><br />
-            <b>FAO Fishing Areas</b>: FAO is an acronym for the Food and Agriculture Organization. This organization has defined the fishing zones. These zones can be seen on FAO's website <a href="https://www.fao.org/fishery/en/area/search" target="_blank">here</a>.<br />
+          <p><b>FAO Fishing Areas</b>: FAO is an acronym for the Food and Agriculture Organization. This organization has defined the fishing zones. These zones can be seen on FAO's website <a href="https://www.fao.org/fishery/en/area/search" target="_blank">here</a>.<br />
           </p>
-      
+    
         </div>
         <div class="col-md-5 defs">
             <h3>Boating/Fishing Terms</h3>
